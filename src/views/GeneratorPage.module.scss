@@ -1,0 +1,12 @@
+@use '@/styles/_tokens.scss' as *;
+@use '@/styles/_mixins.scss' as mixins;
+
+.generatorGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: $space-4;
+
+  @include mixins.mq(md) {
+    grid-template-columns: 1fr;
+  }
+}

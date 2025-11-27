@@ -1,0 +1,74 @@
+@use '@/styles/_tokens.scss' as *;
+@use '@/styles/_mixins.scss' as mixins;
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: $space-6;
+  align-items: center;
+  margin-top: $space-6;
+
+  @include mixins.mq(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.heroText h1 {
+  margin: 0 0 $space-3;
+  font-size: 42px;
+  line-height: 1.05;
+}
+
+.sub {
+  margin: 0 0 $space-4;
+  color: $color-muted;
+  max-width: 620px;
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  flex-wrap: wrap;
+  margin-bottom: $space-3;
+}
+
+.primary {
+  padding: $space-3 $space-5;
+  border-radius: $radius-pill;
+  background: linear-gradient(135deg, $color-primary, $color-accent-blue);
+  color: #0c0f14;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  box-shadow: 0 12px 30px rgba(94, 240, 193, 0.35);
+}
+
+.eyebrow {
+  margin: 0 0 $space-2;
+  color: $color-contrast;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.points {
+  list-style: none;
+  padding: 0;
+  margin: $space-3 0 0;
+  display: flex;
+  gap: $space-3;
+  flex-wrap: wrap;
+
+  li {
+    padding: $space-2 $space-3;
+    border-radius: $radius-pill;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    color: $color-muted;
+  }
+}
+
+.heroPreview {
+  position: relative;
+}
